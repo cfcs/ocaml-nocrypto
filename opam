@@ -17,9 +17,10 @@ remove:  [ "ocamlfind" "remove" "nocrypto" ]
 
 depends: [
   "ocamlfind" {build}
+  "ocamlbuild" {build}
   "cstruct" {>= "1.6.0"}
   "zarith"
-  "type_conv"
+  "ppx_sexp_conv"
   "sexplib"
   ("mirage-no-xen" | ("mirage-xen" & "mirage-entropy-xen" & "zarith-xen"))
   "ounit" {test}
@@ -40,4 +41,4 @@ build-test: [
 ]
 
 tags: [ "org:mirage" ]
-available: [ ocaml-version >= "4.01.0" ]
+available: [ ocaml-version >= "4.02.2" ]
